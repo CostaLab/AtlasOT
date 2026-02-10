@@ -1,0 +1,12 @@
+setup.py
+scFUGW/__init__.py
+scFUGW/cost.py
+scFUGW/evaluate.py
+scFUGW/main_test.py
+scFUGW/process_data.py
+scFUGW/scFUGW.py
+scFUGW.egg-info/PKG-INFO
+scFUGW.egg-info/SOURCES.txt
+scFUGW.egg-info/dependency_links.txt
+scFUGW.egg-info/requires.txt
+scFUGW.egg-info/top_level.txt
