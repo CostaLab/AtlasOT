@@ -7,7 +7,7 @@ Gromov-Wasserstein (FUGW) transport plan, and uses that plan for **label
 transfer**, **gene imputation**, and **spatial deconvolution**.
 
 <p align="center">
-  <img src="docs/images/Fig1.svg" alt="AtlasOT overview" width="750">
+  <img src="docs/images/Fig1-draft.png" alt="AtlasOT overview" width="750">
 </p>
 
 ---
