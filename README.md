@@ -1,10 +1,10 @@
 # AtlasOT
 
-Optimal-transport based integration of single-cell multimodal data.
+AtlasOT - The Fused Unbalanced Gromov Wasserstein for Multimodal Integration of Disease Atlases
 
 AtlasOT aligns two modalities (RNA / ATAC / spatial) with a Fused Unbalanced
 Gromov-Wasserstein (FUGW) transport plan, and uses that plan for **label
-transfer**, **gene imputation**, and **spatial deconvolution**.
+transfer**, **gene imputation**, **spatial deconvolution** and **spatial chromatin velocity**.
 
 <p align="center">
   <img src="docs/images/Fig1-draft.png" alt="AtlasOT overview" width="750">
