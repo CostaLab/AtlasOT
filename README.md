@@ -6,9 +6,8 @@ AtlasOT aligns two modalities (RNA / ATAC / spatial) with a Fused Unbalanced
 Gromov-Wasserstein (FUGW) transport plan, and uses that plan for **label
 transfer**, **gene imputation**, and **spatial deconvolution**.
 
-<!-- TODO: replace with the final architecture figure -->
 <p align="center">
-  <img src="docs/images/architecture.png" alt="AtlasOT overview" width="750">
+  <img src="docs/images/Fig1.svg" alt="AtlasOT overview" width="750">
 </p>
 
 ---
@@ -19,11 +18,12 @@ Requires Python 3.10 and a Linux machine (a CUDA GPU is optional but strongly
 recommended for datasets above a few thousand cells).
 
 ```bash
-# TODO: replace with the final repository URL
-git clone https://github.com/<ORG>/AtlasOT.git
+git clone https://github.com/CostaLab/AtlasOT.git
+
 cd AtlasOT
 
 conda create -n atlasot python=3.10 -y
+
 conda activate atlasot
 
 pip install .
