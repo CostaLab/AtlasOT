@@ -1,0 +1,17 @@
+# Mac OS
+.DS_Store
+
+# Python
+__pycache__
+.pytest_cache
+*.egg-info
+build
+dist
+doc/_build
+doc/auto_examples
+doc/gen_modules
+doc/generated
+doc/**/generated
+.vscode
+
+examples/**/*.pkl
