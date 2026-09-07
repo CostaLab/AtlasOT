@@ -49,7 +49,7 @@ Two end-to-end notebooks live in [`tutorial/`](tutorial/):
 
 | Notebook | Task |
 |---|---|
-| [`atlasot_tutorial.ipynb`](tutorial/atlasot_tutorial.ipynb) | **RNA → ATAC label transfer** — preprocessing, shared space, transport plan, transferring cell-type labels |
+| [`atlasot_rna_atac_tutorial.ipynb`](tutorial/atlasot_rna_atac_tutorial.ipynb) | **RNA → ATAC label transfer** — preprocessing, shared space, transport plan, transferring cell-type labels |
 | [`atlasot_rna_spatial_tutorial.ipynb`](tutorial/atlasot_rna_spatial_tutorial.ipynb) | **RNA → spatial gene imputation** — imputing unmeasured genes onto tissue, plus deconvolution and dominant-cell-type maps |
 
 A minimal RNA → spatial run looks like this:
