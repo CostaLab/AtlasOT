@@ -50,7 +50,7 @@ atac.obsp['cost_matrix'] = aot.compute_geodesic_distance(atac.obsm['scopen'], k=
 # 5. Transport plan
 pi = aot.scFUGW_RNA_Spatial_with_cost(target=rna, source=atac,
     target_cost='cost_matrix', source_cost='cost_matrix', M=M,
-    alpha=0.1, rho=1.1, eps=1e-5).cpu().numpy()
+    alpha=0.1, rho=1.1, eps=1e-6).cpu().numpy()  # multiome → eps=1e-3; non-multiome use 1e-6
 
 # 6. Label transfer
 pred = aot.ot_label_transfer(pi, rna.obs['cell_type'])
@@ -99,7 +99,7 @@ smoothed = aot.graph_smooth_results(imputed.values, adj, alpha=0.6, n_iter=2)
 | Parameter | RNA-ATAC | RNA-Spatial |
 |-----------|----------|-------------|
 | `rho` | 1.1 | 1.1 |
-| `eps` (start range) | 1e-6 ~ 1e-4 | 1e-2 ~ 1e-1 |
+| `eps` (recommended) | multiome **1e-3** / non-multiome **1e-6** | 1e-2 ~ 1e-1 |
 | `k` (geodesic) | 30 | 30 |
 | `k_phys` (spatial) | — | 15 |
 | `smooth_alpha` | — | 0.6 |
@@ -107,9 +107,13 @@ smoothed = aot.graph_smooth_results(imputed.values, adj, alpha=0.6, n_iter=2)
 
 ### Tuning Guidance
 
+**`rho` (unbalanced / mass-relaxation penalty)** — default **1.1** works for any data/task
+(RNA-ATAC and RNA-Spatial alike); in practice you rarely need to tune it.
+
 **`eps` (entropic regularization)** — controls how sharp/blurry the transport plan is.
-- **RNA-ATAC**: the two modalities are very different (peaks vs genes), so `eps` should be
-  **smaller** to enforce stricter matching. Try **[1e-6, 1e-5, 1e-4]** first.
+- **RNA-ATAC**: use **1e-3** for **multiome** data and **1e-6** for **non-multiome**
+  (independently profiled RNA/ATAC) data. Theoretically smaller `eps` gives sharper matching,
+  but going below ~1e-6 makes the solver break down.
 - **RNA-Spatial**: both are gene expression, modality gap is small, so `eps` can be larger.
   Try **[1e-2, 1e-1]** first.
 
@@ -128,9 +132,10 @@ matching (M) and intra-modality geometry preservation (C1, C2). α=0 means "trus
   this case, trust geometry more: **α closer to 1**. Try values like 0.9, 0.95. Again, α=1
   may not be optimal — a small feature signal can help.
 
-- **RNA-Spatial imputation**: start from **0.5** and tune in both directions — gene imputation
-  needs a sweet spot that balances all four metrics (PCC, JS, RMSE, SSIM). Scan α ∈ [0.1, 0.9]
-  to find the optimal trade-off for your data.
+- **RNA-Spatial imputation**: gene imputation needs a sweet spot balancing all four metrics
+  (PCC, JS, RMSE, SSIM). Prefer running the grid-search helper `sweep_atlasot_alpha_eps()`
+  (see *Parameter Sweep* below) — it scans α × eps and reports the four metrics per combo.
+  If you'd rather not tune, just use **α = 0.5** as a safe default.
 
 ### Other Modality Pairs (not benchmarked but theoretically supported)
 
