@@ -5,7 +5,11 @@ AtlasOT - The Fused Unbalanced Gromov Wasserstein for Multimodal Integration of 
 
 
 
-https://github.com/user-attachments/assets/2dab7b6b-e33b-421f-9f84-8bea50c7baea
+
+
+https://github.com/user-attachments/assets/88e55341-8001-4b1e-b6eb-f008d225e017
+
+
 
 
 
