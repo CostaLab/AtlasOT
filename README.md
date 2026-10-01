@@ -4,6 +4,11 @@
 AtlasOT - The Fused Unbalanced Gromov Wasserstein for Multimodal Integration of Disease Atlases
 
 
+
+https://github.com/user-attachments/assets/2dab7b6b-e33b-421f-9f84-8bea50c7baea
+
+
+
 AtlasOT aligns two modalities (RNA / ATAC / spatial) with a Fused Unbalanced
 Gromov-Wasserstein (FUGW) transport plan, and uses that plan for **label
 transfer**, **gene imputation**, **spatial deconvolution** and **spatial chromatin velocity**.
