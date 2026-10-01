@@ -106,7 +106,10 @@ If you use AtlasOT in your research, please cite:
   url     = {https://www.biorxiv.org/content/10.64898/2026.09.22.753496v1}
 }
 ```
+---
+## Reproducibility
 
+- 🔗 **Repository:** [CostaLab/AtlasOT-reproducibility](https://github.com/CostaLab/AtlasOT-reproducibility)
 ---
 
 ## License
