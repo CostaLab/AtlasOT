@@ -2,7 +2,7 @@
 
 AtlasOT - The Fused Unbalanced Gromov Wasserstein for Multimodal Integration of Disease Atlases
 
-[![bioRxiv](https://img.shields.io/badge/bioRxiv-preprint-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.09.22.753496v1)
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-doi%3A10.64898%2F2026.09.22.753496-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.09.22.753496v1)
 
 AtlasOT aligns two modalities (RNA / ATAC / spatial) with a Fused Unbalanced
 Gromov-Wasserstein (FUGW) transport plan, and uses that plan for **label
@@ -95,7 +95,7 @@ Hyperparameter guidance (`alpha`, `eps`) per task: [`AI-README.md`](AI-README.md
 If you use AtlasOT in your research, please cite:
 
 <!-- TODO: fill in once the paper is out -->
-
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-preprint-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.09.22.753496v1)
 ```bibtex
 @article{peng2026atlasot,
   title   = {AtlasOT - The Fused Unbalanced Gromov-Wasserstein for Multimodal Integration of Disease Atlases},
